@@ -113,16 +113,16 @@ export default class StringBuilder {
     return this.scheduleOperation(replacePattern, pattern, value);
   }
 
-  public replaceAll(pattern: string, value: any): this {
-    return this.scheduleOperation(replaceAll, pattern, value);
+  public replaceAll(pattern: string, value: any, ignoreCase: boolean = false): this {
+    return this.scheduleOperation(replaceAll, pattern, value, ignoreCase);
   }
 
-  public replaceFirst(pattern: string, value: any): this {
-    return this.scheduleOperation(replaceFirst, pattern, value);
+  public replaceFirst(pattern: string, value: any, ignoreCase: boolean = false): this {
+    return this.scheduleOperation(replaceFirst, pattern, value, ignoreCase);
   }
 
-  public replaceLast(pattern: string, value: any): this {
-    return this.scheduleOperation(replaceLast, pattern, value);
+  public replaceLast(pattern: string, value: any, ignoreCase: boolean = false): this {
+    return this.scheduleOperation(replaceLast, pattern, value, ignoreCase);
   }
 
   public transform(transformer: (str: string) => string): this {
