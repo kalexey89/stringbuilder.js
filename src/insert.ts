@@ -6,7 +6,7 @@ export function insert(...args: any[]): string {
 
     return ''
       .concat(value)
-      .concat(str.slice(String(value).length));
+      .concat(str);
   }
   else if (args.length === 3) {
     const [index, value, str] = args;
