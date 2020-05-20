@@ -7,17 +7,21 @@
     "builder",
     "stringbuilder"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kalexey89/stringbuilder.js"
+  },
   "license": "MIT",
   "author": "kalexey89",
   "main": "dist/StringBuilder.js",
   "browser": "dist/StringBuilder.js",
   "types": "dist/StringBuilder.d.ts",
   "scripts": {
+    "bundle": "rollup -f umd -n StringBuilder -m -o dist/StringBuilder.js --compact --context this dist/StringBuilder.js",
+    "compile": "tsc",
     "dist": "npm run dist:before && npm run compile && npm run bundle && npm run dist:after",
     "dist:after": "cd dist && rimraf -v \"!(StringBuilder*)\" & cd ..",
     "dist:before": "cd dist && rimraf -v * & cd ..",
-    "bundle": "rollup -f umd -n StringBuilder -m -o dist/StringBuilder.js --compact --context this dist/StringBuilder.js",
-    "compile": "tsc",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint --fix src/**/*.ts"
   },
