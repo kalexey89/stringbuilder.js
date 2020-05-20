@@ -1,6 +1,6 @@
 export function remove(start: number, end: number, str: string): string {
   return ''
-    .concat(str.slice(Math.floor(start)))
+    .concat(str.slice(0, Math.floor(start)))
     .concat(str.slice(Math.floor(end)));
 }
 
